@@ -1,0 +1,12 @@
+<h1>{{author}}</h1>
+
+<ul>
+    {% for track in tracks %}
+        <li>
+            {{ track.song }} - {{ track.artist }}
+        </li>
+    {% endfor %}
+</ul>
+
+{# {{ }} to say smth #}
+{# {% %} to do smth #}

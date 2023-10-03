@@ -5,14 +5,27 @@ namespace App\Controller;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\HttpFoundation\Response;
 use function Symfony\Component\String\u;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 
-class VinylController{
-
+class VinylController extends AbstractController
+{
     #[Route('/')]
     public function homepage(): Response
     {
-        return new Response('Author: Metallica');
+        $tracks = [
+            ['song' => 'Gangsta\'s Paradise', 'artist' => 'Coolio'],
+            ['song' => 'Waterfalls', 'artist' => 'TLC'],
+            ['song' => 'Creep', 'artist' => 'Radiohead'],
+            ['song' => 'Kiss from a Rose', 'artist' => 'Seal'],
+            ['song' => 'On Bended Knee', 'artist' => 'Boyz II Men'],
+            ['song' => 'Fantasy', 'artist' => 'Mariah Carey'],
+        ];
+
+        return $this->render('vinyl/homepage.html.twig', [
+            'author' => 'Mixed Songs',
+            'tracks' => $tracks
+        ]);
     }
 
     #[Route('/browse/{slug}')]
@@ -27,3 +40,5 @@ class VinylController{
         return new Response($title);
     }
 }
+
+// 03.10 teraz będzie Chapter08
