@@ -40,5 +40,3 @@ class VinylController extends AbstractController
         return new Response($title);
     }
 }
-
-// 03.10 teraz będzie Chapter08
