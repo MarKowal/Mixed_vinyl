@@ -9,7 +9,7 @@ use Symfony\Component\HttpFoundation\JsonResponse;
 
 class SongController extends AbstractController
 {
-    #[Route('/api/songs/{id}')]
+    #[Route('/api/songs/{id<\d+>}', methods:['GET'])]
     public function getSong($id): Response
     {
         // TODO query the database
