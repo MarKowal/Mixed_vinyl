@@ -9,4 +9,4 @@ import './bootstrap.js';
 // any CSS you import will output into a single css file (app.css in this case)
 import './styles/app.css';
 
-console.log('Hello, nazywam sie app.js!');
+console.log('Hello, my name is app.js!');
